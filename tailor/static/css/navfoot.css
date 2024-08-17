@@ -1,0 +1,243 @@
+/* navbar style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f8f8;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background:linear-gradient(45deg,white,gray,black,black,black,black);
+    padding: 10px 20px;
+    color: white;
+}
+
+.brand {
+    font-size: 1.5em;
+    font-weight: bold;
+}
+
+.mid {
+    display: flex;
+    align-items: center;
+}
+
+.link a {
+    color: white;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 1em;
+    transition: color 0.3s;
+}
+
+.link a:hover {
+    color: #ddd;
+}
+
+.searchbar {
+    display: flex;
+    align-items: center;
+    margin-left: 20px;
+    background-color: none;
+    padding: 1px;
+    border-radius: 2px;
+}
+
+.searchbar input {
+    border: none;
+    background: transparent;
+    color: white;
+    outline: none;
+    padding: 5px;
+}
+
+.icon {
+    color: white;
+    font-size: 1.2em;
+    cursor: pointer;
+    padding-left: 10px;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #ddd;
+}
+
+.user button {
+    background-color: #444;
+    color: white;
+    border: none;
+    padding: 8px 15px;
+    margin: 0 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.user button:hover {
+    background-color: #555;
+}
+
+
+
+/* footer style */
+footer {
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+footer .links {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+footer h4 {
+    margin-bottom: 10px;
+    font-size: 1.2em;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    margin: 5px 0;
+    display: block;
+    font-size: 0.9em;
+    transition: color 0.3s;
+}
+
+footer a:hover {
+    color: #ddd;
+}
+
+footer hr {
+    width: 90%;
+    border: 1px solid #555;
+    margin: 20px 0;
+}
+
+footer .social-icons {
+    text-align: center;
+}
+
+footer .social-icons a {
+    font-size: 1em;
+    margin: 5px 15px;
+    transition: color 0.3s;
+    display: inline-block;
+}
+
+footer .social-icons a:hover {
+    color: #1da1f2; /* Example color for hover effect */
+}
+
+@media (max-width: 768px) {
+    footer .links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    footer hr {
+        width: 80%;
+    }
+
+    footer .social-icons {
+        margin-top: 10px;
+    }
+}
+
+
+/* login box style */
+#login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 60vh;
+    background-color: #f3f3f3;
+}
+
+.card {
+    background-color: #fff;
+    width: 300px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    position: sticky;  /* Changed to sticky */
+    top: 20px;         /* Adjust this value as needed to control the position from the top */
+}
+
+
+.card-head {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 1.2em;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.close-btn:hover {
+    color: #000;
+}
+
+.card-body {
+    font-size: 1em;
+}
+
+.inputs {
+    margin-top: 10px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #007bff;
+}
+.password-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    width: 100%;
+    padding-right: 40px; /* Space for the eye icon */
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    cursor: pointer;
+    color: #aaa;
+}
+
+.toggle-password:hover {
+    color: #000;
+}
