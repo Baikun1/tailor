@@ -2,12 +2,14 @@
 {% extends "navfoot.html" %}
 
 {% block title %}
-  stichfit/register
+stichfit/register
 {% endblock %}
 
 
 {% block content %}
-  <!-- <h1>this is register page</h1> -->
+<!-- <h1>this is register page</h1> -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/signin.css' %}">
   <div class="container">
     <h1>Sign In</h1>
     <form id="signInForm">
