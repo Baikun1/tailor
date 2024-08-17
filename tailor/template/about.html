@@ -7,5 +7,157 @@
 
 
 {% block content %}
-  <h1>this is about page</h1>
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+
+<section>
+  <header class="header">
+    <div class="container">
+        <h1 class="fade-in">Welcome to Stichfit</h1>
+        <p class="slide-up">Crafting Custom Tailoring Experiences Since 2024</p>
+    </div>
+</header>
+
+<section class="about-us">
+    <div class="container">
+        <h2>Our Story</h2>
+        <div class="story">
+            <p>Stichfit was born out of a passion for bespoke tailoring and a desire to bring modern convenience to traditional craftsmanship. We believe that every individual deserves clothing that fits perfectly and expresses their unique style.</p>
+            <p>Our journey began in a small workshop, where we honed our skills and built a reputation for quality and attention to detail. Today, we are proud to offer a full range of tailoring services, from custom clothing to alterations and everything in between.</p>
+            <p>Over the years, we've served thousands of satisfied customers, each with their unique needs and styles. Our commitment to excellence has earned us a loyal following and a place in the hearts of fashion enthusiasts everywhere.</p>
+            <p>Our workshop is equipped with state-of-the-art tools and technology, allowing us to deliver precision and quality in every garment we create. Our team of skilled artisans brings decades of experience to the table, ensuring that each piece is crafted with care and attention to detail.</p>
+            <p>At Stichfit, we believe that fashion should be accessible to everyone. That's why we offer a wide range of services at competitive prices, ensuring that you can enjoy the luxury of custom-tailored clothing without breaking the bank.</p>
+            <p>We also believe in sustainability and ethical practices. We source our materials responsibly and work with suppliers who share our commitment to quality and environmental stewardship. Our goal is to create beautiful garments that you can feel good about wearing.</p>
+        </div>
+    </div>
+</section>
+
+<section class="team">
+    <div class="container">
+        <h2>Meet Our Team</h2>
+        <div class="team-members">
+            <div class="team-member">
+                <img src="{% static 'img/team1.jpg' %}" alt="Founder" class="team-img zoom-in">
+                <h3>Jane Doe</h3>
+                <p>Founder &amp; Master Tailor</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'img/team2.jpg' %}" alt="Designer" class="team-img zoom-in">
+                <h3>John Smith</h3>
+                <p>Lead Designer</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'img/team3.jpg' %}" alt="Operations" class="team-img zoom-in">
+                <h3>Emily White</h3>
+                <p>Head of Operations</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'img/team4.jpg' %}" alt="Marketing" class="team-img zoom-in">
+                <h3>Michael Brown</h3>
+                <p>Marketing Manager</p>
+            </div>
+            <div class="team-member">
+                <img src="{% static 'img/team5.jpg' %}" alt="Customer Service" class="team-img zoom-in">
+                <h3>Linda Green</h3>
+                <p>Customer Service Lead</p>
+              </div>
+              <div class="team-member">
+                  <img src="{% static 'img/team6.jpg' %}" alt="Tailor" class="team-img zoom-in">
+                  <h3>Sarah Blue</h3>
+                  <p>Senior Tailor</p>
+              </div>
+              <div class="team-member">
+                  <img src="{% static 'img/team7.jpg' %}" alt="Assistant" class="team-img zoom-in">
+                  <h3>James Gray</h3>
+                  <p>Tailoring Assistant</p>
+              </div>
+              <div class="team-member">
+                  <img src="{% static 'img/team8.jpg' %}" alt="IT Specialist" class="team-img zoom-in">
+                  <h3>Anna Black</h3>
+                  <p>IT Specialist</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="values">
+      <div class="container">
+          <h2>Our Values</h2>
+          <div class="values-list">
+              <div class="value-item slide-left">
+                  <h3>Quality</h3>
+                  <p>We never compromise on quality. Every stitch, every cut is made with the utmost precision and care, ensuring that your garments not only look great but stand the test of time.</p>
+              </div>
+              <div class="value-item slide-right">
+                  <h3>Customer Satisfaction</h3>
+                  <p>Your satisfaction is our priority. We work closely with you to ensure every detail is just right, from the initial consultation to the final fitting. We take pride in delivering a personalized experience that exceeds expectations.</p>
+              </div>
+              <div class="value-item slide-left">
+                  <h3>Innovation</h3>
+                  <p>We embrace innovation in our designs and processes to deliver the best possible experience. Whether it's integrating new technologies into our workshop or staying ahead of fashion trends, we are always looking for ways to improve and innovate.</p>
+              </div>
+              <div class="value-item slide-right">
+                  <h3>Sustainability</h3>
+                  <p>We are committed to sustainable practices, using eco-friendly materials and reducing waste wherever possible. Our approach to fashion is not just about looking good but doing good for the planet as well.</p>
+              </div>
+              <div class="value-item slide-left">
+                  <h3>Community</h3>
+                  <p>We believe in giving back to the community that has supported us throughout our journey. We actively participate in local initiatives and work to create opportunities for others in the fashion and tailoring industry.</p>
+              </div>
+              <div class="value-item slide-right">
+                  <h3>Craftsmanship</h3>
+                  <p>Our team consists of highly skilled artisans who take pride in their craft. Every garment we create is a testament to their dedication and expertise. We believe that true craftsmanship is about more than just skill—it's about passion.</p>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="testimonials">
+      <div class="container">
+          <h2>What Our Customers Say</h2>
+          <div class="testimonials-list">
+              <div class="testimonial-item">
+                  <p>"Stichfit provided me with the perfect suit for my wedding. The fit was impeccable, and the quality was outstanding. I couldn't have asked for a better experience."</p>
+                  <h4>- David Johnson</h4>
+              </div>
+              <div class="testimonial-item">
+                  <p>"I have been using Stichfit for all my tailoring needs for years. Their attention to detail and commitment to customer satisfaction are second to none."</p>
+                  <h4>- Emily Brown</h4>
+              </div>
+              <div class="testimonial-item">
+                  <p>"The team at Stichfit truly understands the art of tailoring. They created a dress for me that not only fits perfectly but also reflects my personal style."</p>
+                  <h4>- Sarah Williams</h4>
+              </div>
+              <div class="testimonial-item">
+                  <p>"I was impressed by Stichfit's dedication to sustainability. It's rare to find a tailor that cares so much about both quality and the environment."</p>
+                  <h4>- Michael Thompson</h4>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="call-to-action">
+      <div class="container">
+          <h2>Ready to Experience Stichfit?</h2>
+          <p>Join thousands of satisfied customers who have trusted us with their tailoring needs. Click below to get started!</p>
+          <a href="{% url 'contact' %}" class="cta-button bounce">Contact Us</a>
+      </div>
+  </section>
+
+  <footer>
+      <div class="container">
+          <div class="footer-content">
+              <p>&copy; 2024 Stichfit. All rights reserved.</p>
+              <div class="social-icons">
+                  <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
+                  <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
+                  <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
+                  <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
+              </div>
+          </div>
+      </div>
+  </footer>
+
+</section>
+<script src="{% static 'js/about.js' %}"></script>
 {% endblock %}
