@@ -18,7 +18,7 @@ h1, h2, h3 {
 }
 
 header {
-    background: url("{% static 'img/banner.jpg' %}") no-repeat center center/cover;
+    background: url("../img/banner.jpg") no-repeat center center/cover;
     height: 50vh;
     display: flex;
     justify-content: center;
