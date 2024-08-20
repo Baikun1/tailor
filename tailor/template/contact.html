@@ -10,6 +10,7 @@
     <p>We'd love to hear from you! Whether you have a question about our services, pricing, or anything else, our team is ready to answer all your questions.</p>
 
     <div class="contact-form">
+        {% csrf_token %}
         <form action="#" method="post">
             <div class="form-group">
                 <label for="name">Full Name</label>
