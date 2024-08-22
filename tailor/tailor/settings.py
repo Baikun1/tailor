@@ -41,8 +41,15 @@ INSTALLED_APPS = [
     'about',
     'service',
     'user',
-
+    'compressor',
 ]
+
+COMPRESS_ROOT = BASE_DIR / 'static'
+ 
+COMPRESS_ENABLED = True
+ 
+STATICFILES_FINDERS = ('compressor.finders.CompressorFinder',)
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -56,7 +63,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tailor.urls'
 
-TEMPLATE_DIR=BASE_DIR+'template'
+TEMPLATE_DIR=os.path.join(BASE_DIR,'template')
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
