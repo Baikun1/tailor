@@ -21,9 +21,11 @@ from home.views import*
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('home.urls')),
+    path('home', include('home.urls')),
     path('service', include('service.urls')),
     path('about', include('about.urls')),
     path('user', include('user.urls')),
-    path('contact', include('user.urls')),
+    path('contact',contact,name='contact'),
+    path('signin',signin,name='signin'),
 
 ]
