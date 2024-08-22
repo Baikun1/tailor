@@ -20,6 +20,21 @@ class User(models.Model):
     def __str__(self):
         return f"{self.first_name} {self.last_name}"
 
+
+# contact table
+class Contact(models.Model):
+    name = models.CharField(max_length=255)
+    email = models.EmailField()
+    phone = models.CharField(max_length=20)
+    subject = models.CharField(max_length=255)
+    message = models.TextField()
+
+    def __str__(self):
+        return f"Message from {self.name} - {self.subject}"
+    
+
+
+    
 # Services Table
 class Service(models.Model):
     service_id = models.AutoField(primary_key=True)

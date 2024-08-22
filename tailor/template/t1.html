@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixabay API Example</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        #gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+
+        .image-container {
+            position: relative;
+            max-width: 300px;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            border-radius: 8px;
+        }
+
+        .image-container .title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.6);
+            color: #fff;
+            width: 100%;
+            padding: 5px;
+            text-align: center;
+            border-radius: 0 0 8px 8px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Pixabay Image Search</h1>
+    <div id="gallery"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const apiKey = '45528642-e06974eaab1f06b1c76fc0984';
+            const query = 'dress+black';
+            const url = `https://pixabay.com/api/?key=${apiKey}&q=${query}&image_type=photo&pretty=true`;
+
+            fetch(url)
+            
+                .then(response => response.json())
+                .then(data => {
+                    const gallery = document.getElementById('gallery');
+                    data.hits.forEach(hit => {
+                        const imageContainer = document.createElement('div');
+                        imageContainer.className = 'image-container';
+
+                        const img = document.createElement('img');
+                        img.src = hit.webformatURL;
+                        img.alt = hit.tags;
+
+                        const title = document.createElement('div');
+                        title.className = 'title';
+                        title.textContent = hit.tags;
+
+                        imageContainer.appendChild(img);
+                        imageContainer.appendChild(title);
+                        gallery.appendChild(imageContainer);
+                    });
+                })
+                .catch(error => {
+                    console.error('Error fetching data:', error);
+                });
+        });
+    </script>
+</body>
+</html>
