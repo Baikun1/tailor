@@ -6,97 +6,103 @@
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{%  static 'css/index.css' %}">
+<!-- <link rel="stylesheet" href="{% static 'css/index.css' %}"> -->
     <!-- Banner Section -->
-    <section class="banner">
-        <img src="{% static 'img/banner-image.jpg' %}" alt="Tailoring Services Banner" class="banner-image">
-        <div class="banner-content">
-            <h1>Welcome to StitchFit</h1>
-            <p>Your One-Stop Solution for Custom Tailoring and Alterations</p>
-            <a href="#" class="cta-button">Get Started</a>
-            <a href="#" class="cta-button">Book Now</a>
-            <a href="#" class="cta-button">Browse Services</a>
+    <section class="banner relative">
+        <img src="{% static 'img/banner-image.jpg' %}" alt="Tailoring Services Banner" class="w-full h-96 object-cover">
+        <div class="banner-content absolute inset-0 flex flex-col justify-center items-center text-white bg-black bg-opacity-50 p-6">
+            <h1 class="text-4xl font-bold mb-4">Welcome to StitchFit</h1>
+            <p class="text-lg mb-6">Your One-Stop Solution for Custom Tailoring and Alterations</p>
+            <div class="space-x-4">
+                <a href="#" class="cta-button bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Get Started</a>
+                <a href="#" class="cta-button bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600">Book Now</a>
+                <a href="#" class="cta-button bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600">Browse Services</a>
+            </div>
         </div>
     </section>
 
     <!-- Featured Services Section -->
-    <section class="featured-services">
-        <h2>Our Featured Services</h2>
+    <section class="featured-services py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">Our Featured Services</h2>
 
-        <div class="service">
-            <img src="{% static 'img/custom-tailoring.jpg' %}" alt="Custom Tailoring">
-            <div class="service-content">
-                <h3>Custom Tailoring</h3>
-                <p>Perfectly tailored outfits that match your style and measurements.</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="service bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="{% static 'img/custom-tailoring.jpg' %}" alt="Custom Tailoring" class="w-full h-48 object-cover">
+                <div class="service-content p-6">
+                    <h3 class="text-2xl font-semibold mb-2">Custom Tailoring</h3>
+                    <p class="text-gray-700">Perfectly tailored outfits that match your style and measurements.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="service">
-            <img src="{% static 'img/alterations.jpg' %}" alt="Alterations">
-            <div class="service-content">
-                <h3>Alterations</h3>
-                <p>Expert alterations to make your clothes fit just right.</p>
+            <div class="service bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="{% static 'img/alterations.jpg' %}" alt="Alterations" class="w-full h-48 object-cover">
+                <div class="service-content p-6">
+                    <h3 class="text-2xl font-semibold mb-2">Alterations</h3>
+                    <p class="text-gray-700">Expert alterations to make your clothes fit just right.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="service">
-            <img src="{% static 'img/fabric-selection.jpg' %}" alt="Fabric Selection">
-            <div class="service-content">
-                <h3>Fabric Selection</h3>
-                <p>Choose from a wide range of high-quality fabrics.</p>
+            <div class="service bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="{% static 'img/fabric-selection.jpg' %}" alt="Fabric Selection" class="w-full h-48 object-cover">
+                <div class="service-content p-6">
+                    <h3 class="text-2xl font-semibold mb-2">Fabric Selection</h3>
+                    <p class="text-gray-700">Choose from a wide range of high-quality fabrics.</p>
+                </div>
             </div>
-        </div>
 
-        <div class="service">
-            <img src="{% static 'img/design-consultation.jpg' %}" alt="Design Consultation">
-            <div class="service-content">
-                <h3>Design Consultation</h3>
-                <p>Get expert advice to create the perfect design for your outfit.</p>
+            <div class="service bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="{% static 'img/design-consultation.jpg' %}" alt="Design Consultation" class="w-full h-48 object-cover">
+                <div class="service-content p-6">
+                    <h3 class="text-2xl font-semibold mb-2">Design Consultation</h3>
+                    <p class="text-gray-700">Get expert advice to create the perfect design for your outfit.</p>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- Service Previews Section -->
-    <section class="service-previews">
-        <h2>Explore Our Services</h2>
+    <section class="service-previews py-16 bg-gray-100">
+        <h2 class="text-3xl font-bold text-center mb-12">Explore Our Services</h2>
 
-        <!-- Repeatable service blocks to meet the length requirement -->
-        {% for i in 1..150 %}
-        <div class="service-preview">
-            <img src="{% static 'img/service-preview.jpg' %}" alt="Service Preview">
-            <div class="service-preview-content">
-                <h3>Service {{ i }}</h3>
-                <p>Brief description of Service {{ i }}. Custom tailoring, alterations, and more.</p>
-                <a href="#" class="cta-button">Learn More</a>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for i in 1..150 %}
+            <div class="service-preview bg-white shadow-lg rounded-lg overflow-hidden">
+                <img src="{% static 'img/service-preview.jpg' %}" alt="Service Preview" class="w-full h-48 object-cover">
+                <div class="service-preview-content p-6">
+                    <h3 class="text-xl font-semibold mb-2">Service {{ i }}</h3>
+                    <p class="text-gray-700">Brief description of Service {{ i }}. Custom tailoring, alterations, and more.</p>
+                    <a href="#" class="cta-button bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600 mt-4 inline-block">Learn More</a>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </section>
 
     <!-- Testimonials Section -->
-    <section class="testimonials">
-        <h2>What Our Customers Say</h2>
+    <section class="testimonials py-16">
+        <h2 class="text-3xl font-bold text-center mb-12">What Our Customers Say</h2>
 
-        <!-- Repeatable testimonial blocks to meet the length requirement -->
-        {% for i in 1..100 %}
-        <div class="testimonial">
-            <img src="{% static 'img/customer.jpg' %}" alt="Customer {{ i }}">
-            <div class="testimonial-content">
-                <h3>Customer {{ i }}</h3>
-                <p>"StitchFit provided exceptional service! My clothes have never fit better."</p>
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {% for i in 1..100 %}
+            <div class="testimonial bg-white shadow-lg rounded-lg overflow-hidden p-6">
+                <img src="{% static 'img/customer.jpg' %}" alt="Customer {{ i }}" class="w-16 h-16 rounded-full mx-auto mb-4">
+                <div class="testimonial-content text-center">
+                    <h3 class="text-xl font-semibold mb-2">Customer {{ i }}</h3>
+                    <p class="text-gray-700">"StitchFit provided exceptional service! My clothes have never fit better."</p>
+                </div>
             </div>
+            {% endfor %}
         </div>
-        {% endfor %}
     </section>
 
     <!-- Newsletter Signup Section -->
-    <section class="newsletter">
-        <h2>Subscribe to Our Newsletter</h2>
-        <form action="#" method="POST" class="newsletter-form">
-            <input type="email" name="email" placeholder="Enter your email" required>
-            <button type="submit" class="cta-button">Subscribe</button>
+    <section class="newsletter py-16 bg-gray-100">
+        <h2 class="text-3xl font-bold text-center mb-6">Subscribe to Our Newsletter</h2>
+        <form action="#" method="POST" class="newsletter-form max-w-lg mx-auto flex flex-col items-center space-y-4">
+            <input type="email" name="email" placeholder="Enter your email" required class="w-full p-3 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500">
+            <button type="submit" class="cta-button bg-blue-500 text-white py-2 px-4 rounded-md hover:bg-blue-600">Subscribe</button>
         </form>
     </section>
 
-<script src="{%  static 'css/index.js' %}"></script>
+<script src="{% static 'css/index.js' %}"></script>
 {% endblock %}

@@ -1,4 +1,3 @@
-
 {% extends "navfoot.html" %}
 
 {% block title %}
@@ -8,20 +7,20 @@
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<link rel="stylesheet" href="{% static 'css/tailwind.css' %}">
 
 <section>
-  <header class="header">
-    <div class="container">
-        <h1 class="fade-in">Welcome to Stichfit</h1>
-        <p class="slide-up">Crafting Custom Tailoring Experiences Since 2024</p>
+  <header class="bg-gray-800 text-white py-16">
+    <div class="container mx-auto text-center">
+        <h1 class="text-4xl font-bold fade-in">Welcome to Stichfit</h1>
+        <p class="text-lg mt-4 slide-up">Crafting Custom Tailoring Experiences Since 2024</p>
     </div>
 </header>
 
-<section class="about-us">
-    <div class="container">
-        <h2>Our Story</h2>
-        <div class="story">
+<section class="about-us py-16">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Our Story</h2>
+        <div class="story space-y-6 text-gray-700">
             <p>Stichfit was born out of a passion for bespoke tailoring and a desire to bring modern convenience to traditional craftsmanship. We believe that every individual deserves clothing that fits perfectly and expresses their unique style.</p>
             <p>Our journey began in a small workshop, where we honed our skills and built a reputation for quality and attention to detail. Today, we are proud to offer a full range of tailoring services, from custom clothing to alterations and everything in between.</p>
             <p>Over the years, we've served thousands of satisfied customers, each with their unique needs and styles. Our commitment to excellence has earned us a loyal following and a place in the hearts of fashion enthusiasts everywhere.</p>
@@ -32,132 +31,85 @@
     </div>
 </section>
 
-<section class="team">
-    <div class="container">
-        <h2>Meet Our Team</h2>
-        <div class="team-members">
-            <div class="team-member">
-                <img src="{% static 'img/team1.jpg' %}" alt="Founder" class="team-img zoom-in">
-                <h3>Jane Doe</h3>
-                <p>Founder &amp; Master Tailor</p>
+<section class="team py-16 bg-gray-100">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Meet Our Team</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="team-member text-center">
+                <img src="{% static 'img/team1.jpg' %}" alt="Founder" class="team-img w-full h-64 object-cover mb-4 rounded-lg shadow-lg zoom-in">
+                <h3 class="text-xl font-semibold">Jane Doe</h3>
+                <p class="text-gray-600">Founder &amp; Master Tailor</p>
             </div>
-            <div class="team-member">
-                <img src="{% static 'img/team1.jpg' %}" alt="Designer" class="team-img zoom-in">
-                <h3>John Smith</h3>
-                <p>Lead Designer</p>
+            <div class="team-member text-center">
+                <img src="{% static 'img/team1.jpg' %}" alt="Designer" class="team-img w-full h-64 object-cover mb-4 rounded-lg shadow-lg zoom-in">
+                <h3 class="text-xl font-semibold">John Smith</h3>
+                <p class="text-gray-600">Lead Designer</p>
             </div>
-            <div class="team-member">
-                <img src="{% static 'img/team1.jpg' %}" alt="Operations" class="team-img zoom-in">
-                <h3>Emily White</h3>
-                <p>Head of Operations</p>
+            <div class="team-member text-center">
+                <img src="{% static 'img/team1.jpg' %}" alt="Operations" class="team-img w-full h-64 object-cover mb-4 rounded-lg shadow-lg zoom-in">
+                <h3 class="text-xl font-semibold">Emily White</h3>
+                <p class="text-gray-600">Head of Operations</p>
             </div>
-            <div class="team-member">
-                <img src="{% static 'img/team1.jpg' %}" alt="Marketing" class="team-img zoom-in">
-                <h3>Michael Brown</h3>
-                <p>Marketing Manager</p>
+            <div class="team-member text-center">
+                <img src="{% static 'img/team1.jpg' %}" alt="Marketing" class="team-img w-full h-64 object-cover mb-4 rounded-lg shadow-lg zoom-in">
+                <h3 class="text-xl font-semibold">Michael Brown</h3>
+                <p class="text-gray-600">Marketing Manager</p>
             </div>
-            <div class="team-member">
-                <img src="{% static 'img/team1.jpg' %}" alt="Customer Service" class="team-img zoom-in">
-                <h3>Linda Green</h3>
-                <p>Customer Service Lead</p>
-              </div>
-              <div class="team-member">
-                  <img src="{% static 'img/team1.jpg' %}" alt="Tailor" class="team-img zoom-in">
-                  <h3>Sarah Blue</h3>
-                  <p>Senior Tailor</p>
-              </div>
-              <div class="team-member">
-                  <img src="{% static 'img/team1.jpg' %}" alt="Assistant" class="team-img zoom-in">
-                  <h3>James Gray</h3>
-                  <p>Tailoring Assistant</p>
-              </div>
-              <div class="team-member">
-                  <img src="{% static 'img/team1.jpg' %}" alt="IT Specialist" class="team-img zoom-in">
-                  <h3>Anna Black</h3>
-                  <p>IT Specialist</p>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="values">
-      <div class="container">
-          <h2>Our Values</h2>
-          <div class="values-list">
-              <div class="value-item slide-left">
-                  <h3>Quality</h3>
-                  <p>We never compromise on quality. Every stitch, every cut is made with the utmost precision and care, ensuring that your garments not only look great but stand the test of time.</p>
-              </div>
-              <div class="value-item slide-right">
-                  <h3>Customer Satisfaction</h3>
-                  <p>Your satisfaction is our priority. We work closely with you to ensure every detail is just right, from the initial consultation to the final fitting. We take pride in delivering a personalized experience that exceeds expectations.</p>
-              </div>
-              <div class="value-item slide-left">
-                  <h3>Innovation</h3>
-                  <p>We embrace innovation in our designs and processes to deliver the best possible experience. Whether it's integrating new technologies into our workshop or staying ahead of fashion trends, we are always looking for ways to improve and innovate.</p>
-              </div>
-              <div class="value-item slide-right">
-                  <h3>Sustainability</h3>
-                  <p>We are committed to sustainable practices, using eco-friendly materials and reducing waste wherever possible. Our approach to fashion is not just about looking good but doing good for the planet as well.</p>
-              </div>
-              <div class="value-item slide-left">
-                  <h3>Community</h3>
-                  <p>We believe in giving back to the community that has supported us throughout our journey. We actively participate in local initiatives and work to create opportunities for others in the fashion and tailoring industry.</p>
-              </div>
-              <div class="value-item slide-right">
-                  <h3>Craftsmanship</h3>
-                  <p>Our team consists of highly skilled artisans who take pride in their craft. Every garment we create is a testament to their dedication and expertise. We believe that true craftsmanship is about more than just skill—it's about passion.</p>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="testimonials">
-      <div class="container">
-          <h2>What Our Customers Say</h2>
-          <div class="testimonials-list">
-              <div class="testimonial-item">
-                  <p>"Stichfit provided me with the perfect suit for my wedding. The fit was impeccable, and the quality was outstanding. I couldn't have asked for a better experience."</p>
-                  <h4>- David Johnson</h4>
-              </div>
-              <div class="testimonial-item">
-                  <p>"I have been using Stichfit for all my tailoring needs for years. Their attention to detail and commitment to customer satisfaction are second to none."</p>
-                  <h4>- Emily Brown</h4>
-              </div>
-              <div class="testimonial-item">
-                  <p>"The team at Stichfit truly understands the art of tailoring. They created a dress for me that not only fits perfectly but also reflects my personal style."</p>
-                  <h4>- Sarah Williams</h4>
-              </div>
-              <div class="testimonial-item">
-                  <p>"I was impressed by Stichfit's dedication to sustainability. It's rare to find a tailor that cares so much about both quality and the environment."</p>
-                  <h4>- Michael Thompson</h4>
-              </div>
-          </div>
-      </div>
-  </section>
-
-  <section class="call-to-action">
-      <div class="container">
-          <h2>Ready to Experience Stichfit?</h2>
-          <p>Join thousands of satisfied customers who have trusted us with their tailoring needs. Click below to get started!</p>
-          <a href="contact" class="cta-button bounce">Contact Us</a>
-      </div>
-  </section>
-
-  <footer>
-      <div class="container">
-          <div class="footer-content">
-              <p>&copy; 2024 Stichfit. All rights reserved.</p>
-              <div class="social-icons">
-                  <a href="#" class="social-icon"><i class="fa fa-facebook"></i></a>
-                  <a href="#" class="social-icon"><i class="fa fa-instagram"></i></a>
-                  <a href="#" class="social-icon"><i class="fa fa-twitter"></i></a>
-                  <a href="#" class="social-icon"><i class="fa fa-linkedin"></i></a>
-              </div>
-          </div>
-      </div>
-  </footer>
-
+            <div class="team-member text-center">
+                <img src="{% static 'img/team1.jpg' %}" alt="Customer Service" class="team-img w-full h-64 object-cover mb-4 rounded-lg shadow-lg zoom-in">
+                <h3 class="text-xl font-semibold">Linda Green</h3>
+                <p class="text-gray-600">Customer Service Lead</p>
+            </div>
+            <div class="team-member text-center">
+                <img src="{% static 'img/team1.jpg' %}" alt="Tailor" class="team-img w-full h-64 object-cover mb-4 rounded-lg shadow-lg zoom-in">
+                <h3 class="text-xl font-semibold">Sarah Blue</h3>
+                <p class="text-gray-600">Senior Tailor</p>
+            </div>
+            <div class="team-member text-center">
+                <img src="{% static 'img/team1.jpg' %}" alt="Assistant" class="team-img w-full h-64 object-cover mb-4 rounded-lg shadow-lg zoom-in">
+                <h3 class="text-xl font-semibold">James Gray</h3>
+                <p class="text-gray-600">Tailoring Assistant</p>
+            </div>
+            <div class="team-member text-center">
+                <img src="{% static 'img/team1.jpg' %}" alt="IT Specialist" class="team-img w-full h-64 object-cover mb-4 rounded-lg shadow-lg zoom-in">
+                <h3 class="text-xl font-semibold">Anna Black</h3>
+                <p class="text-gray-600">IT Specialist</p>
+            </div>
+        </div>
+    </div>
 </section>
-<script src="{% static 'js/about.js' %}"></script>
+
+<section class="values py-16">
+    <div class="container mx-auto">
+        <h2 class="text-3xl font-bold mb-8 text-center">Our Values</h2>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="value-item slide-left p-6 bg-gray-100 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4">Quality</h3>
+                <p class="text-gray-700">We never compromise on quality. Every stitch, every cut is made with the utmost precision and care, ensuring that your garments not only look great but stand the test of time.</p>
+            </div>
+            <div class="value-item slide-right p-6 bg-gray-100 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4">Customer Satisfaction</h3>
+                <p class="text-gray-700">Your satisfaction is our priority. We work closely with you to ensure every detail is just right, from the initial consultation to the final fitting. We take pride in delivering a personalized experience that exceeds expectations.</p>
+            </div>
+            <div class="value-item slide-left p-6 bg-gray-100 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4">Innovation</h3>
+                <p class="text-gray-700">We embrace innovation in our designs and processes to deliver the best possible experience. Whether it's integrating new technologies into our workshop or staying ahead of fashion trends, we are always looking for ways to improve and innovate.</p>
+            </div>
+            <div class="value-item slide-right p-6 bg-gray-100 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4">Sustainability</h3>
+                <p class="text-gray-700">We are committed to sustainable practices, using eco-friendly materials and reducing waste wherever possible. Our approach to fashion is not just about looking good but doing good for the planet as well.</p>
+            </div>
+            <div class="value-item slide-left p-6 bg-gray-100 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4">Community</h3>
+                <p class="text-gray-700">We believe in giving back to the community that has supported us throughout our journey. We actively participate in local initiatives and work to create opportunities for others in the fashion and tailoring industry.</p>
+            </div>
+            <div class="value-item slide-right p-6 bg-gray-100 rounded-lg shadow-lg">
+                <h3 class="text-xl font-semibold mb-4">Craftsmanship</h3>
+                <p class="text-gray-700">Our team consists of highly skilled artisans who take pride in their craft. Every garment we create is a testament to their dedication and expertise. We believe that true craftsmanship is about more than just skill—it's about passion.</p>
+            </div>
+        </div>
+    </div>
+</section>
+</section>
+
 {% endblock %}
