@@ -20,9 +20,4 @@ from home.views import*
 
 urlpatterns = [
     path('',home,name='home'),
-    path('about',about,name='about'),
-    path('contact',contact,name='contact'),
-    path('services',service,name='service'),
-    path('signin/',signin,name='signin'),
-    path('login',login,name='login'),
 ]
