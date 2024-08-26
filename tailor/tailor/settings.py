@@ -93,19 +93,7 @@ DATABASES = {
         'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'tilor.cre66ui8shy0.us-east-2.rds.amazonaws.com',
-#         'USER': 'admin',
-#         'PASSWORD': 'Baikuntha',
-#         'HOST': 'localhost',
-#         'PORT': '3306',
-#         'OPTIONS': {
-#             'charset': 'utf8mb4',
-#         },
-#     }
-# }
+
 
 
 
