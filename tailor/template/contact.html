@@ -5,113 +5,42 @@
 {% endblock %}
 
 {% block content %}
-<div class="container">
-    <h1>Contact Us</h1>
-    <p>We'd love to hear from you! Whether you have a question about our services, pricing, or anything else, our team is ready to answer all your questions.</p>
+<div class="container mx-auto p-6 bg-white shadow-lg rounded-lg">
+    <h1 class="text-3xl font-bold text-center text-gray-900 mb-6">Contact Us</h1>
+    <p class="text-center text-gray-600 mb-8">We'd love to hear from you! Whether you have a question about our services, pricing, or anything else, our team is ready to answer all your questions.</p>
 
-    <div class="contact-form">
-        <form action="#" method="post">
+    <div class="contact-form mx-auto max-w-lg">
+        <form action="#" method="post" class="space-y-6">
             {% csrf_token %}
             <div class="form-group">
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" placeholder="Your full name" required>
+                <label for="name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="Your full name" required class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             </div>
 
             <div class="form-group">
-                <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Your email address" required>
+                <label for="email" class="block text-gray-700 font-semibold mb-2">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="Your email address" required class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             </div>
 
             <div class="form-group">
-                <label for="phone">Phone Number</label>
-                <input type="tel" id="phone" name="phone" placeholder="Your phone number" required>
+                <label for="phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="Your phone number" required class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             </div>
 
             <div class="form-group">
-                <label for="subject">Subject</label>
-                <input type="text" id="subject" name="subject" placeholder="Subject of your message" required>
+                <label for="subject" class="block text-gray-700 font-semibold mb-2">Subject</label>
+                <input type="text" id="subject" name="subject" placeholder="Subject of your message" required class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500">
             </div>
 
             <div class="form-group">
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="6" placeholder="Your message" required></textarea>
+                <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
+                <textarea id="message" name="message" rows="6" placeholder="Your message" required class="w-full px-4 py-2 border border-gray-300 rounded-lg text-gray-900 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500"></textarea>
             </div>
 
             <div class="form-group">
-                <button type="submit">Send Message</button>
+                <button type="submit" class="w-full px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-opacity-50">Send Message</button>
             </div>
         </form>
     </div>
 </div>
-
-<style>
-    .container {
-        width: 80%;
-        margin: 0 auto;
-        padding: 20px;
-        background-color: #fff;
-        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        border-radius: 8px;
-    }
-
-    h1 {
-        text-align: center;
-        color: #333;
-        margin-bottom: 20px;
-    }
-
-    p {
-        text-align: center;
-        color: #666;
-        margin-bottom: 30px;
-    }
-
-    .contact-form {
-        width: 100%;
-        max-width: 600px;
-        margin: 0 auto;
-    }
-
-    .form-group {
-        margin-bottom: 20px;
-    }
-
-    .form-group label {
-        display: block;
-        font-weight: bold;
-        margin-bottom: 8px;
-        color: #333;
-    }
-
-    .form-group input, .form-group textarea {
-        width: 100%;
-        padding: 10px;
-        border: 1px solid #ddd;
-        border-radius: 5px;
-        font-size: 16px;
-    }
-
-    .form-group button {
-        width: 100%;
-        padding: 12px;
-        background-color: #007bff;
-        color: #fff;
-        border: none;
-        border-radius: 5px;
-        font-size: 16px;
-        cursor: pointer;
-    }
-
-    .form-group button:hover {
-        background-color: #0056b3;
-    }
-</style>
-
-<script>
-    // Example JS functionality
-    document.querySelector('form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        alert('Message sent successfully!');
-    });
-</script>
 {% endblock %}

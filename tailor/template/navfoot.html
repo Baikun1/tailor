@@ -7,10 +7,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     {% compress css %}
-	<link rel="stylesheet" href="{% static 'src/output.css' %}">
-	{% endcompress %}
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+    {% endcompress %}
     <!-- <script src="https://kit.fontawesome.com/7226ead90d.js" crossorigin="anonymous"></script> -->
     <!-- <link rel="stylesheet" href="{% static 'css/navfoot.css' %}"> -->
 
@@ -19,31 +20,68 @@
 <body class="font-sans antialiased bg-gray-100 text-gray-900">
     <nav class="bg-white shadow-md">
         <div class="container mx-auto px-4 flex justify-between items-center py-4">
-            <div class="brand">
+            <div class="brand flex items-center">
                 <img src="{% static 'img/stichfit-removebg-preview.png' %}" alt="stichfit" class="h-10">
             </div>
-            <div class="mid flex items-center">
+            
+            <!-- Hamburger Icon -->
+            <input type="checkbox" id="nav-toggle" class="hidden">
+            <label for="nav-toggle" class="block lg:hidden text-gray-700 cursor-pointer">
+                <i class="fas fa-bars fa-lg"></i>
+            </label>
+
+            <div class="mid flex items-center space-x-4 hidden lg:flex lg:items-center">
                 <div class="link space-x-4">
                     <a href="home" class="text-gray-700 hover:text-blue-500">Home</a>
                     <a href="service" class="text-gray-700 hover:text-blue-500">Service</a>
                     <a href="about" class="text-gray-700 hover:text-blue-500">About</a>
                     <a href="contact" class="text-gray-700 hover:text-blue-500">Contact</a>
                 </div>
-                <div class="searchbar ml-4 flex items-center">
-                    <input type="text" placeholder="ex: about" id="searchInput" class="border rounded-l px-3 py-2">
-                    <div class="icon bg-blue-500 text-white px-4 py-2 rounded-r cursor-pointer" onclick="searchFunction()">
-                        <i class="fa-thin fa-magnifying-glass"></i>
+                <div class="searchbar flex items-center ml-4">
+                    <input type="text" placeholder="ex: about" id="searchInput"
+                        class="border border-gray-300 rounded-l-lg px-4 py-1 text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <div class="bg-blue-500 text-white px-4 py-2 rounded-r-lg cursor-pointer hover:bg-blue-600 transition duration-200 ease-in-out flex items-center justify-center"
+                        onclick="searchFunction()">
+                        <i class="fas fa-search"></i>
                     </div>
                 </div>
             </div>
+
             <div class="user flex items-center space-x-4">
-                <button id="loginbtn" class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400">Login</button>
+                <button id="loginbtn"
+                    class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400 lg:hidden">Login</button>
                 <a href="signin">
-                    <button onclick="signin()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Sign In</button>
+                    <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 lg:hidden">Sign In</button>
                 </a>
             </div>
         </div>
+
+        <!-- Mobile Menu -->
+        <div class="nav-menu lg:hidden">
+            <div class="flex flex-col p-4 space-y-2">
+                <a href="home" class="text-gray-700 hover:text-blue-500">Home</a>
+                <a href="service" class="text-gray-700 hover:text-blue-500">Service</a>
+                <a href="about" class="text-gray-700 hover:text-blue-500">About</a>
+                <a href="contact" class="text-gray-700 hover:text-blue-500">Contact</a>
+                <div class="searchbar flex items-center mt-4">
+                    <input type="text" placeholder="ex: about" id="searchInput"
+                        class="border border-gray-300 rounded-l-lg px-4 py-2 text-gray-700 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <div class="bg-blue-500 text-white px-4 py-2 rounded-r-lg cursor-pointer hover:bg-blue-600 transition duration-200 ease-in-out flex items-center justify-center"
+                        onclick="searchFunction()">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+                <div class="user flex flex-col space-y-2 mt-4">
+                    <button id="loginbtn"
+                        class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400">Login</button>
+                    <a href="signin">
+                        <button class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Sign In</button>
+                    </a>
+                </div>
+            </div>
+        </div>
     </nav>
+
 
     <section id="login" class="hidden">
         <div class="card max-w-md mx-auto mt-10 bg-white p-8 rounded shadow-lg">
@@ -58,7 +96,9 @@
                             <table class="w-full">
                                 <tr>
                                     <td class="py-2"><label for="username" class="block">Username/Mail</label></td>
-                                    <td class="py-2"><input type="text" id="username" placeholder="ex: Example123@gmail.com" class="w-full border px-3 py-2 rounded"></td>
+                                    <td class="py-2"><input type="text" id="username"
+                                            placeholder="ex: Example123@gmail.com"
+                                            class="w-full border px-3 py-2 rounded"></td>
                                 </tr>
                                 <tr>
                                     <td class="py-2"><label for="password" class="block">Password</label></td>
@@ -124,10 +164,14 @@
             <div class="social-icons text-center">
                 <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
                 <div class="flex justify-center space-x-6">
-                    <a href="#" data-platform="facebook" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i> Facebook</a>
-                    <a href="#" data-platform="instagram" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i> Instagram</a>
-                    <a href="#" data-platform="github" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i> GitHub</a>
-                    <a href="#" data-platform="youtube" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i> YouTube</a>
+                    <a href="#" data-platform="facebook" class="text-gray-400 hover:text-white"><i
+                            class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" data-platform="instagram" class="text-gray-400 hover:text-white"><i
+                            class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#" data-platform="github" class="text-gray-400 hover:text-white"><i
+                            class="fab fa-github"></i> GitHub</a>
+                    <a href="#" data-platform="youtube" class="text-gray-400 hover:text-white"><i
+                            class="fab fa-youtube"></i> YouTube</a>
                 </div>
             </div>
         </div>

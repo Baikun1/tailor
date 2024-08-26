@@ -6,163 +6,124 @@
 
 {% block content %}
 {% load static %}
-<link rel="stylesheet" href="{%  static 'css/service.css' %}">
 <div class="service-page">
 
     <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <h1 class="hero-title">Our Premium Tailoring Services</h1>
-            <p class="hero-subtitle">Expert craftsmanship, personalized designs, and impeccable style.</p>
-            <div class="cta-buttons">
-                <a href="#" class="cta-button">Get Started</a>
-                <a href="#" class="cta-button">Book Now</a>
-                <a href="#" class="cta-button">Browse Services</a>
+    <section class="hero-section bg-gray-900 text-white py-16">
+        <div class="container mx-auto text-center">
+            <h1 class="hero-title text-4xl font-bold mb-4">Our Premium Tailoring Services</h1>
+            <p class="hero-subtitle text-lg mb-8">Expert craftsmanship, personalized designs, and impeccable style.</p>
+            <div class="cta-buttons space-x-4">
+                <a href="#" class="cta-button bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Get Started</a>
+                <a href="#" class="cta-button bg-green-500 hover:bg-green-600 text-white py-2 px-4 rounded">Book Now</a>
+                <a href="#" class="cta-button bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded">Browse Services</a>
             </div>
         </div>
     </section>
 
     <!-- Featured Services Section -->
-    <section class="featured-services">
-        <div class="container">
-            <h2 class="section-title">Featured Services</h2>
-            <div class="service-grid">
-                <div class="service-item">
-                    <img src="{% static 'img/custom-tailoring.jpg' %}" alt="Custom Tailoring">
-                    <h3>Custom Tailoring</h3>
-                    <p>Bespoke tailoring to fit your style and preferences.</p>
-                    <a href="#" class="service-link">Learn More</a>
+    <section class="featured-services py-16">
+        <div class="container mx-auto">
+            <h2 class="section-title text-3xl font-bold text-center mb-12">Featured Services</h2>
+            <div class="service-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="service-item bg-white p-6 rounded-lg shadow-lg">
+                    <img src="{% static 'img/custom-tailoring.jpg' %}" alt="Custom Tailoring" class="rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Custom Tailoring</h3>
+                    <p class="text-gray-700 mb-4">Bespoke tailoring to fit your style and preferences.</p>
+                    <a href="#" class="service-link text-blue-500 hover:underline">Learn More</a>
                 </div>
-                <div class="service-item">
-                    <img src="{% static 'img/alterations.jpg' %}" alt="Alterations">
-                    <h3>Alterations</h3>
-                    <p>Perfect adjustments for a flawless fit every time.</p>
-                    <a href="#" class="service-link">Learn More</a>
+                <div class="service-item bg-white p-6 rounded-lg shadow-lg">
+                    <img src="{% static 'img/alterations.jpg' %}" alt="Alterations" class="rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Alterations</h3>
+                    <p class="text-gray-700 mb-4">Perfect adjustments for a flawless fit every time.</p>
+                    <a href="#" class="service-link text-blue-500 hover:underline">Learn More</a>
                 </div>
-                <div class="service-item">
-                    <img src="{% static 'img/fabric-selection.jpg' %}" alt="Fabric Selection">
-                    <h3>Fabric Selection</h3>
-                    <p>Choose from a wide range of premium fabrics.</p>
-                    <a href="#" class="service-link">Learn More</a>
+                <div class="service-item bg-white p-6 rounded-lg shadow-lg">
+                    <img src="{% static 'img/fabric-selection.jpg' %}" alt="Fabric Selection" class="rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Fabric Selection</h3>
+                    <p class="text-gray-700 mb-4">Choose from a wide range of premium fabrics.</p>
+                    <a href="#" class="service-link text-blue-500 hover:underline">Learn More</a>
                 </div>
-                <div class="service-item">
-                    <img src="{% static 'img/design-consultation.jpg' %}" alt="Design Consultation">
-                    <h3>Design Consultation</h3>
-                    <p>Work with our experts to create your perfect look.</p>
-                    <a href="#" class="service-link">Learn More</a>
+                <div class="service-item bg-white p-6 rounded-lg shadow-lg">
+                    <img src="{% static 'img/design-consultation.jpg' %}" alt="Design Consultation" class="rounded mb-4">
+                    <h3 class="text-xl font-semibold mb-2">Design Consultation</h3>
+                    <p class="text-gray-700 mb-4">Work with our experts to create your perfect look.</p>
+                    <a href="#" class="service-link text-blue-500 hover:underline">Learn More</a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Detailed Service Descriptions -->
-    <section class="service-descriptions">
-        <div class="container">
-            <h2 class="section-title">Our Services in Detail</h2>
+    <section class="service-descriptions py-16 bg-gray-100">
+        <div class="container mx-auto">
+            <h2 class="section-title text-3xl font-bold text-center mb-12">Our Services in Detail</h2>
 
             <!-- Custom Tailoring -->
-            <div class="service-detail">
-                <img src="{% static 'img/custom-tailoring.jpg' %}" alt="Custom Tailoring">
-                <div class="detail-content">
-                    <h3>Custom Tailoring</h3>
-                    <p>At Stichfit, we specialize in creating custom-tailored clothing that reflects your individual style. Whether it's a suit, dress, or any other garment, our expert tailors work with you to design and craft pieces that are perfectly fitted to your measurements and preferences. We use only the finest materials and pay attention to every detail to ensure that your clothing not only looks great but also feels comfortable and lasts long.</p>
-                    <ul>
+            <div class="service-detail flex flex-col md:flex-row items-center mb-12">
+                <img src="{% static 'img/custom-tailoring.jpg' %}" alt="Custom Tailoring" class="md:w-1/2 rounded-lg mb-4 md:mb-0 md:mr-8">
+                <div class="detail-content md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4">Custom Tailoring</h3>
+                    <p class="text-gray-700 mb-4">At Stichfit, we specialize in creating custom-tailored clothing that reflects your individual style. Whether it's a suit, dress, or any other garment, our expert tailors work with you to design and craft pieces that are perfectly fitted to your measurements and preferences. We use only the finest materials and pay attention to every detail to ensure that your clothing not only looks great but also feels comfortable and lasts long.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
                         <li>Personalized fitting sessions</li>
                         <li>Wide range of fabric options</li>
                         <li>Attention to detail in every stitch</li>
                         <li>Timely delivery</li>
                     </ul>
-                    <a href="#" class="cta-button">Book Now</a>
+                    <a href="#" class="cta-button bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Book Now</a>
                 </div>
             </div>
 
             <!-- Alterations -->
-            <div class="service-detail">
-                <img src="{% static 'img/alterations.jpg' %}" alt="Alterations">
-                <div class="detail-content">
-                    <h3>Alterations</h3>
-                    <p>Our alteration services ensure that your existing garments fit you perfectly. Whether you need a simple hem or a complete resizing, our skilled tailors can make the necessary adjustments to enhance the fit and comfort of your clothing. We handle all types of fabrics and garment styles with care and precision.</p>
-                    <ul>
+            <div class="service-detail flex flex-col md:flex-row items-center mb-12">
+                <img src="{% static 'img/alterations.jpg' %}" alt="Alterations" class="md:w-1/2 rounded-lg mb-4 md:mb-0 md:mr-8">
+                <div class="detail-content md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4">Alterations</h3>
+                    <p class="text-gray-700 mb-4">Our alteration services ensure that your existing garments fit you perfectly. Whether you need a simple hem or a complete resizing, our skilled tailors can make the necessary adjustments to enhance the fit and comfort of your clothing. We handle all types of fabrics and garment styles with care and precision.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
                         <li>Hemming and resizing</li>
                         <li>Adjustments for comfort and style</li>
                         <li>Quick turnaround times</li>
                         <li>Affordable pricing</li>
                     </ul>
-                    <a href="#" class="cta-button">Book Now</a>
+                    <a href="#" class="cta-button bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Book Now</a>
                 </div>
             </div>
 
             <!-- Fabric Selection -->
-            <div class="service-detail">
-                <img src="{% static 'img/fabric-selection.jpg' %}" alt="Fabric Selection">
-                <div class="detail-content">
-                    <h3>Fabric Selection</h3>
-                    <p>Choose from a wide selection of premium fabrics to create your custom-tailored clothing. Our fabric library includes everything from luxurious silks to durable wools, all available in a variety of colors and patterns. Our consultants are available to help you select the best fabric for your garment, ensuring that it meets your style and comfort needs.</p>
-                    <ul>
+            <div class="service-detail flex flex-col md:flex-row items-center mb-12">
+                <img src="{% static 'img/fabric-selection.jpg' %}" alt="Fabric Selection" class="md:w-1/2 rounded-lg mb-4 md:mb-0 md:mr-8">
+                <div class="detail-content md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4">Fabric Selection</h3>
+                    <p class="text-gray-700 mb-4">Choose from a wide selection of premium fabrics to create your custom-tailored clothing. Our fabric library includes everything from luxurious silks to durable wools, all available in a variety of colors and patterns. Our consultants are available to help you select the best fabric for your garment, ensuring that it meets your style and comfort needs.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
                         <li>Extensive fabric library</li>
                         <li>Guidance from expert consultants</li>
                         <li>Quality materials from top suppliers</li>
                         <li>Swatches available upon request</li>
                     </ul>
-                    <a href="#" class="cta-button">Browse Fabrics</a>
+                    <a href="#" class="cta-button bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Browse Fabrics</a>
                 </div>
             </div>
 
             <!-- Design Consultation -->
-            <div class="service-detail">
-                <img src="{% static 'img/design-consultation.jpg' %}" alt="Design Consultation">
-                <div class="detail-content">
-                    <h3>Design Consultation</h3>
-                    <p>Our design consultation services are perfect for those looking to create a unique piece of clothing or revamp their wardrobe. Our experienced designers will work with you to understand your style preferences and design garments that reflect your personality. From initial sketches to final fitting, we ensure that every detail aligns with your vision.</p>
-                    <ul>
+            <div class="service-detail flex flex-col md:flex-row items-center mb-12">
+                <img src="{% static 'img/design-consultation.jpg' %}" alt="Design Consultation" class="md:w-1/2 rounded-lg mb-4 md:mb-0 md:mr-8">
+                <div class="detail-content md:w-1/2">
+                    <h3 class="text-2xl font-semibold mb-4">Design Consultation</h3>
+                    <p class="text-gray-700 mb-4">Our design consultation services are perfect for those looking to create a unique piece of clothing or revamp their wardrobe. Our experienced designers will work with you to understand your style preferences and design garments that reflect your personality. From initial sketches to final fitting, we ensure that every detail aligns with your vision.</p>
+                    <ul class="list-disc list-inside text-gray-700 mb-4">
                         <li>Personalized design sessions</li>
                         <li>Professional sketching and prototyping</li>
                         <li>Comprehensive wardrobe planning</li>
                         <li>Collaborative design process</li>
                     </ul>
-                    <a href="#" class="cta-button">Start Your Design</a>
+                    <a href="#" class="cta-button bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded">Start Consultation</a>
                 </div>
             </div>
 
         </div>
     </section>
-
-    <!-- Customer Testimonials -->
-    <section class="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Customers Say</h2>
-            <div class="testimonial-grid">
-                <div class="testimonial-item">
-                    <p>"Stichfit transformed my wardrobe with custom pieces that fit me perfectly. The attention to detail is unmatched."</p>
-                    <h4>Jane Doe</h4>
-                    <span>Customer</span>
-                </div>
-                <div class="testimonial-item">
-                    <p>"The alteration service was quick and affordable. My favorite dress fits like a glove now."</p>
-                    <h4>John Smith</h4>
-                    <span>Customer</span>
-                </div>
-                <div class="testimonial-item">
-                    <p>"I had an amazing experience with their design consultation. My new suit is exactly what I envisioned."</p>
-                    <h4>Mary Johnson</h4>
-                    <span>Customer</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container">
-            <h2 class="section-title">Ready to Experience Stichfit?</h2>
-            <p>Book your appointment today and step into a world of custom-made fashion and impeccable style.</p>
-            <div class="cta-buttons">
-                <a href="#" class="cta-button">Get Started</a>
-                <a href="#" class="cta-button">Book Now</a>
-            </div>
-        </div>
-    </section>
-
 </div>
-<script src="{% static 'js/service.js' %}"></script>
 {% endblock %}

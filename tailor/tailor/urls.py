@@ -27,6 +27,6 @@ urlpatterns = [
     path('about', include('about.urls')),
     path('user', include('user.urls')),
     path('contact',contact,name='contact'),
-    path('signin',signin,name='signin'),
+    path('signin/',signin,name='signin'),
 
 ]

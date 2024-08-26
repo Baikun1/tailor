@@ -20,4 +20,5 @@ from home.views import*
 
 urlpatterns = [
     path('',home,name='home'),
+    
 ]
