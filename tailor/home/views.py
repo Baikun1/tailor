@@ -40,13 +40,13 @@ def signin(request):
         # return HttpResponse(f"{'success': {True}, 'user_id': {user_id}}")
 
     return render(request, 'signin.html')
-def login(request):
-    return render(request,'logincard.html')
+# def login(request):
+#     return render(request,'logincard.html')
 def home(request):
     return render(request,'index.html')
 
 def contact(request):
     return render(request,'contact.html')
 
-# def signin(request):
-#     return render(request,'signin.html')
+def signin(request):
+    return render(request,'signin.html')

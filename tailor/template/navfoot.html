@@ -1,3 +1,4 @@
+{% load compress %}
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
@@ -6,62 +7,65 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}{% endblock %}</title>
-    <script src="https://kit.fontawesome.com/7226ead90d.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="{% static 'css/navfoot.css' %}">
+
+    {% compress css %}
+	<link rel="stylesheet" href="{% static 'src/output.css' %}">
+	{% endcompress %}
+    <!-- <script src="https://kit.fontawesome.com/7226ead90d.js" crossorigin="anonymous"></script> -->
+    <!-- <link rel="stylesheet" href="{% static 'css/navfoot.css' %}"> -->
 
 </head>
 
-<body>
-    <nav>
-        <div class="brand">
-
-            <img src="{% static 'img/stichfit-removebg-preview.png' %}" alt="stichfit" height="40px">
-        </div>
-        <div class="mid">
-            <div class="link">
-                <a href="{% url 'home' %}">Home</a>
-                <a href="service">Service</a>
-                <a href="about">About</a>
-                <a href="contact">Contact</a>
+<body class="font-sans antialiased bg-gray-100 text-gray-900">
+    <nav class="bg-white shadow-md">
+        <div class="container mx-auto px-4 flex justify-between items-center py-4">
+            <div class="brand">
+                <img src="{% static 'img/stichfit-removebg-preview.png' %}" alt="stichfit" class="h-10">
             </div>
-            <div class="searchbar">
-                <input type="text" placeholder="ex: about" id="searchInput">
-                <div class="icon" onclick="searchFunction()" ><i class="fa-thin fa-magnifying-glass"></i></div>
+            <div class="mid flex items-center">
+                <div class="link space-x-4">
+                    <a href="home" class="text-gray-700 hover:text-blue-500">Home</a>
+                    <a href="service" class="text-gray-700 hover:text-blue-500">Service</a>
+                    <a href="about" class="text-gray-700 hover:text-blue-500">About</a>
+                    <a href="contact" class="text-gray-700 hover:text-blue-500">Contact</a>
+                </div>
+                <div class="searchbar ml-4 flex items-center">
+                    <input type="text" placeholder="ex: about" id="searchInput" class="border rounded-l px-3 py-2">
+                    <div class="icon bg-blue-500 text-white px-4 py-2 rounded-r cursor-pointer" onclick="searchFunction()">
+                        <i class="fa-thin fa-magnifying-glass"></i>
+                    </div>
+                </div>
             </div>
-        </div>
-        <div class="user">
-            <button id="loginbtn">Login</button>
-            <a href="signin">
-                <button onclick="signin()" >Sign In</button>
-            </a>
-            
+            <div class="user flex items-center space-x-4">
+                <button id="loginbtn" class="bg-gray-300 text-gray-700 px-4 py-2 rounded hover:bg-gray-400">Login</button>
+                <a href="signin">
+                    <button onclick="signin()" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600">Sign In</button>
+                </a>
+            </div>
         </div>
     </nav>
 
-    <section>
-
-    </section>
-    <section id="login" style="display: none;">
-        <div class="card">
-            <div class="card-head">
-                Login page
-                <span class="close-btn">&times;</span>
+    <section id="login" class="hidden">
+        <div class="card max-w-md mx-auto mt-10 bg-white p-8 rounded shadow-lg">
+            <div class="card-head flex justify-between items-center mb-4">
+                <h2 class="text-xl font-semibold">Login page</h2>
+                <span class="close-btn cursor-pointer text-gray-500">&times;</span>
             </div>
             <div class="card-body">
                 <form method="post">
-                    <div class="inputs">
+                    <div class="inputs space-y-4">
                         <legend>
-                            <table>
+                            <table class="w-full">
                                 <tr>
-                                    <td><label for="">Username/Mail</label></td>
-                                    <td><input type="text" placeholder="ex: Example123@gmail.com"></td>
+                                    <td class="py-2"><label for="username" class="block">Username/Mail</label></td>
+                                    <td class="py-2"><input type="text" id="username" placeholder="ex: Example123@gmail.com" class="w-full border px-3 py-2 rounded"></td>
                                 </tr>
                                 <tr>
-                                    <td><label for="">Password</label></td>
-                                    <td>
-                                        <div class="password-container">
-                                            <input type="password" name="password" id="psw">
-                                            <span class="toggle-password">
+                                    <td class="py-2"><label for="password" class="block">Password</label></td>
+                                    <td class="py-2">
+                                        <div class="password-container flex items-center border rounded px-3 py-2">
+                                            <input type="password" name="password" id="psw" class="w-full outline-none">
+                                            <span class="toggle-password cursor-pointer text-gray-500 ml-2">
                                                 <i class="fas fa-eye"></i>
                                             </span>
                                         </div>
@@ -75,68 +79,62 @@
         </div>
     </section>
 
-    <main>
+    <main class="container mx-auto px-4 py-8">
         {% block content %}
         {% endblock %}
-
-        <!-- Your main content -->
     </main>
 
-    <footer>
-        <div class="links">
-            <div class="links1">
-                <h4>Services</h4>
-                <a href="#">Castume Tailoring</a>
-                <a href="#">Alternation</a>
-                <a href="#">Fabric Selection</a>
-                <a href="#">Design Consultation</a>
-                <a href="#">StichFit</a>
+    <footer class="bg-gray-900 text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 mb-8">
+                <div class="links1">
+                    <h4 class="font-semibold text-lg mb-4">Services</h4>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Custom Tailoring</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Alteration</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Fabric Selection</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Design Consultation</a>
+                    <a href="#" class="block text-gray-400 hover:text-white">StichFit</a>
+                </div>
+                <div class="links2">
+                    <h4 class="font-semibold text-lg mb-4">Company</h4>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">About Us</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Careers</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Press</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Blog</a>
+                    <a href="#" class="block text-gray-400 hover:text-white">Contact</a>
+                </div>
+                <div class="links3">
+                    <h4 class="font-semibold text-lg mb-4">Support</h4>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Help Center</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Privacy Policy</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Terms of Service</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">FAQs</a>
+                    <a href="#" class="block text-gray-400 hover:text-white">Feedback</a>
+                </div>
+                <div class="links4">
+                    <h4 class="font-semibold text-lg mb-4">Resources</h4>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Documentation</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">API Reference</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Guides</a>
+                    <a href="#" class="block text-gray-400 hover:text-white mb-2">Community</a>
+                    <a href="#" class="block text-gray-400 hover:text-white">Events</a>
+                </div>
             </div>
-            <div class="links2">
-                <h4>Company</h4>
-                <a href="#">About Us</a>
-                <a href="#">Careers</a>
-                <a href="#">Press</a>
-                <a href="#">Blog</a>
-                <a href="#">Contact</a>
-            </div>
-            <div class="links3">
-                <h4>Support</h4>
-                <a href="#">Help Center</a>
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">FAQs</a>
-                <a href="#">Feedback</a>
-            </div>
-            <div class="links4">
-                <h4>Resources</h4>
-                <a href="#">Documentation</a>
-                <a href="#">API Reference</a>
-                <a href="#">Guides</a>
-                <a href="#">Community</a>
-                <a href="#">Events</a>
+            <hr class="border-gray-700 mb-8">
+            <div class="social-icons text-center">
+                <h4 class="font-semibold text-lg mb-4">Follow Us</h4>
+                <div class="flex justify-center space-x-6">
+                    <a href="#" data-platform="facebook" class="text-gray-400 hover:text-white"><i class="fab fa-facebook-f"></i> Facebook</a>
+                    <a href="#" data-platform="instagram" class="text-gray-400 hover:text-white"><i class="fab fa-instagram"></i> Instagram</a>
+                    <a href="#" data-platform="github" class="text-gray-400 hover:text-white"><i class="fab fa-github"></i> GitHub</a>
+                    <a href="#" data-platform="youtube" class="text-gray-400 hover:text-white"><i class="fab fa-youtube"></i> YouTube</a>
+                </div>
             </div>
         </div>
-
-        <hr>
-
-        <div class="social-icons">
-            <h4>Follow Us</h4>
-            <a href="#" data-platform="facebook"><i class="fab fa-facebook-f"></i> Facebook</a>
-            <a href="#" data-platform="instagram"><i class="fab fa-instagram"></i> Instagram</a>
-            <a href="#" data-platform="github"><i class="fab fa-github"></i> GitHub</a>
-            <a href="#" data-platform="youtube"><i class="fab fa-youtube"></i> YouTube</a>
-        </div>
-        
     </footer>
 
-
-
-    <script>
-        
-
-    </script>
     <script src="{% static 'js/navfoot.js' %}"></script>
 </body>
+
 
 </html>
